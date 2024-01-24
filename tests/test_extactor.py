@@ -18,7 +18,7 @@ def _get_resource(name) -> str:
 
 
 async def test_Extractor():
-    index_page = _get_resource("index_page.html")
+    index_page = _get_resource("index_page_html")
 
     class StaticExtractor(Extractor):
         def reformat_date(self, raw_date: str, standard_time: datetime | None = None):
@@ -90,7 +90,7 @@ async def test_Extractor():
 
 
 async def test_FullExtractor(mocker):
-    mocker.patch("hxsoup.AsyncClient.get", return_value=hxsoup.SoupTools(_get_resource("article.html")))
+    mocker.patch("hxsoup.AsyncClient.get", return_value=hxsoup.SoupTools(_get_resource("article_html")))
 
     async with hxsoup.AsyncClient(follow_redirects=True) as client:
         result = await FullExtractor(client).fetch_and_extract_article(
