@@ -157,7 +157,7 @@ class Normalizer:
             text = filter(self.is_normal_character, text)
         text = list(text)
 
-        korean_characters_count = sum(1 for c in text if ord("가") <= ord(c) <= ord("힣"))
+        korean_characters_count = sum(ord("가") <= ord(c) <= ord("힣") for c in text)
         return korean_characters_count / len(text)
 
     @staticmethod
