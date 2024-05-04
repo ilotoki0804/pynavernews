@@ -1,11 +1,12 @@
 from __future__ import annotations
-from datetime import datetime, timedelta
+
 import logging
 import string
+from datetime import datetime, timedelta
 from typing import Any, AsyncGenerator, Iterable
-from bs4 import Tag
 
 import hxsoup
+from bs4 import Tag
 
 
 class FieldMissingError(Exception):

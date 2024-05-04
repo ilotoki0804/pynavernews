@@ -1,13 +1,14 @@
 from __future__ import annotations
+
 import asyncio
-from datetime import datetime, timedelta
 import json
+from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Iterable, Iterator, NoReturn
 
-from httpx._types import TimeoutTypes
 import hxsoup
 import tqdm
+from httpx._types import TimeoutTypes
 
 from .extractor import Extractor
 
